@@ -1,0 +1,101 @@
+vehicle_id,types_transport,name_company,types_fuel,status
+VH_100,Minibus,TATA,Essence,Garé
+VH_101,Bus,Dakar Dem Dikk,Électrique,En panne
+VH_102,Bus,SENBUS,Électrique,En panne
+VH_103,Bus,Clando Express,Diesel,Garé
+VH_104,Bus,ALLO Taxi,Électrique,Garé
+VH_105,Minibus,Clando Express,Électrique,En service
+VH_106,Bus,TATA,Électrique,Garé
+VH_107,Bus,Clando Express,Essence,Garé
+VH_108,Minibus,Dakar Dem Dikk,Essence,En service
+VH_109,Bus,TATA,Électrique,En panne
+VH_110,Bus,Clando Express,Diesel,En panne
+VH_111,Minibus,Dakar Dem Dikk,Diesel,En service
+VH_112,Car rapide,Dakar Dem Dikk,Essence,En service
+VH_113,Minibus,TATA,Électrique,En panne
+VH_114,Minibus,TATA,Électrique,En panne
+VH_115,Minibus,Clando Express,Diesel,Garé
+VH_116,Car rapide,Clando Express,Essence,En service
+VH_117,Taxi,ALLO Taxi,Électrique,En service
+VH_118,Bus,TATA,Diesel,En panne
+VH_119,Bus,Dakar Dem Dikk,Essence,En panne
+VH_120,Car rapide,SENBUS,Essence,En service
+VH_121,Minibus,TATA,Essence,En service
+VH_122,Car rapide,Dakar Dem Dikk,Électrique,En service
+VH_123,Minibus,Clando Express,Essence,Garé
+VH_124,Minibus,ALLO Taxi,Essence,En panne
+VH_125,Car rapide,SENBUS,Électrique,Garé
+VH_126,Car rapide,TATA,Essence,Garé
+VH_127,Minibus,ALLO Taxi,Diesel,En service
+VH_128,Car rapide,Dakar Dem Dikk,Diesel,En service
+VH_129,Minibus,TATA,Électrique,En service
+VH_130,Minibus,TATA,Électrique,En panne
+VH_131,Minibus,TATA,Diesel,En panne
+VH_132,Car rapide,SENBUS,Électrique,Garé
+VH_133,Car rapide,SENBUS,Essence,En panne
+VH_134,Car rapide,Clando Express,Diesel,En service
+VH_135,Bus,SENBUS,Diesel,En panne
+VH_136,Minibus,SENBUS,Essence,Garé
+VH_137,Car rapide,ALLO Taxi,Essence,En panne
+VH_138,Minibus,ALLO Taxi,Électrique,En service
+VH_139,Minibus,Clando Express,Diesel,Garé
+VH_140,Taxi,Clando Express,Électrique,En panne
+VH_141,Bus,Clando Express,Diesel,Garé
+VH_142,Car rapide,ALLO Taxi,Diesel,En panne
+VH_143,Car rapide,SENBUS,Essence,En service
+VH_144,Bus,Dakar Dem Dikk,Électrique,En service
+VH_145,Bus,Clando Express,Essence,En service
+VH_146,Bus,SENBUS,Essence,En service
+VH_147,Taxi,Clando Express,Diesel,En panne
+VH_148,Bus,TATA,Essence,En panne
+VH_149,Car rapide,SENBUS,Diesel,En service
+VH_150,Bus,SENBUS,Essence,Garé
+VH_151,Car rapide,Clando Express,Essence,En service
+VH_152,Taxi,ALLO Taxi,Électrique,En panne
+VH_153,Minibus,Clando Express,Électrique,Garé
+VH_154,Minibus,Dakar Dem Dikk,Électrique,En panne
+VH_155,Bus,Dakar Dem Dikk,Essence,En service
+VH_156,Taxi,SENBUS,Électrique,En service
+VH_157,Car rapide,ALLO Taxi,Essence,En panne
+VH_158,Minibus,SENBUS,Électrique,En panne
+VH_159,Bus,Clando Express,Électrique,En panne
+VH_160,Taxi,Dakar Dem Dikk,Diesel,Garé
+VH_161,Minibus,Clando Express,Électrique,Garé
+VH_162,Car rapide,TATA,Essence,En service
+VH_163,Bus,ALLO Taxi,Diesel,En service
+VH_164,Minibus,TATA,Diesel,En panne
+VH_165,Taxi,SENBUS,Diesel,En panne
+VH_166,Minibus,TATA,Diesel,Garé
+VH_167,Car rapide,ALLO Taxi,Électrique,En service
+VH_168,Minibus,ALLO Taxi,Électrique,Garé
+VH_169,Taxi,SENBUS,Diesel,Garé
+VH_170,Car rapide,SENBUS,Électrique,En service
+VH_171,Minibus,TATA,Essence,Garé
+VH_172,Minibus,Dakar Dem Dikk,Essence,En panne
+VH_173,Taxi,TATA,Électrique,Garé
+VH_174,Bus,TATA,Électrique,En panne
+VH_175,Bus,ALLO Taxi,Diesel,En service
+VH_176,Taxi,Dakar Dem Dikk,Diesel,Garé
+VH_177,Taxi,ALLO Taxi,Diesel,En panne
+VH_178,Car rapide,SENBUS,Diesel,Garé
+VH_179,Minibus,Clando Express,Électrique,En service
+VH_180,Car rapide,Clando Express,Électrique,Garé
+VH_181,Minibus,SENBUS,Diesel,En service
+VH_182,Taxi,ALLO Taxi,Électrique,En service
+VH_183,Bus,Dakar Dem Dikk,Essence,En panne
+VH_184,Minibus,Clando Express,Diesel,Garé
+VH_185,Bus,Clando Express,Essence,En service
+VH_186,Minibus,Clando Express,Diesel,En panne
+VH_187,Minibus,Dakar Dem Dikk,Électrique,En service
+VH_188,Car rapide,SENBUS,Essence,En panne
+VH_189,Minibus,SENBUS,Essence,Garé
+VH_190,Car rapide,SENBUS,Diesel,Garé
+VH_191,Minibus,SENBUS,Électrique,En panne
+VH_192,Taxi,TATA,Diesel,En panne
+VH_193,Taxi,TATA,Électrique,En service
+VH_194,Bus,SENBUS,Électrique,Garé
+VH_195,Bus,Clando Express,Essence,En panne
+VH_196,Minibus,Dakar Dem Dikk,Essence,Garé
+VH_197,Car rapide,TATA,Diesel,En panne
+VH_198,Taxi,Dakar Dem Dikk,Électrique,En panne
+VH_199,Car rapide,TATA,Essence,Garé

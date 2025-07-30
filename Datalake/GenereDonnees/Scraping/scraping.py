@@ -30,3 +30,4 @@ with open("resultat.csv", "w", newline="", encoding="utf-8") as fichier_csv:
     writer = csv.writer(fichier_csv)
     writer.writerows(donnees_csv)  # Écrit toutes les lignes en une seule fois
 
+   

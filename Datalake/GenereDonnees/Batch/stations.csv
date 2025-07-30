@@ -1,0 +1,101 @@
+stop_id,name,latitude,longitude,zone,shelter
+STOP_001,Terminus rue Delannoy,54.797202,-86.379338,Zone Nord,False
+STOP_002,Terminus rue Fernandez,-47.819447,15.238587,Centre-ville,False
+STOP_003,Terminus boulevard de Lesage,52.791910,-52.009804,Banlieue Ouest,True
+STOP_004,Terminus avenue Madeleine Pereira,-24.331116,-163.402343,Zone Sud,False
+STOP_005,Terminus chemin Lejeune,-87.762902,-94.478017,Zone Nord,False
+STOP_006,Terminus avenue Grégoire Lefort,-25.335114,-154.612098,Zone Sud,True
+STOP_007,Terminus boulevard de Cohen,50.665106,-172.516861,Zone Nord,False
+STOP_008,Terminus avenue Ferreira,30.883250,-46.644464,Centre-ville,True
+STOP_009,Terminus rue Maillot,-58.958716,-134.737170,Zone Sud,False
+STOP_010,Terminus avenue de Marchal,16.292843,63.478821,Zone Nord,True
+STOP_011,Terminus avenue Klein,15.557252,100.491498,Centre-ville,True
+STOP_012,Terminus rue Pierre,-0.263426,170.855569,Banlieue Ouest,False
+STOP_013,Terminus rue Camus,-79.552724,118.556154,Zone Sud,False
+STOP_014,Terminus rue de Durand,-55.512598,-26.829715,Zone Sud,False
+STOP_015,Terminus rue de Gimenez,-17.952418,26.769998,Zone Nord,False
+STOP_016,Terminus chemin de Pierre,67.935094,111.361184,Zone Nord,False
+STOP_017,Terminus chemin de Pruvost,75.209915,11.636297,Zone Sud,True
+STOP_018,Terminus chemin de Gros,87.319318,-3.154579,Banlieue Ouest,True
+STOP_019,Terminus avenue Timothée Hubert,-55.146702,-11.094336,Centre-ville,True
+STOP_020,Terminus rue Voisin,37.292346,130.920882,Zone Nord,False
+STOP_021,Terminus rue Roger,-17.288680,168.341390,Centre-ville,True
+STOP_022,Terminus avenue de Jean,43.985618,-161.743205,Zone Sud,True
+STOP_023,Terminus boulevard de Gilbert,23.158355,-140.231790,Centre-ville,True
+STOP_024,Terminus rue de Marty,59.718110,136.334766,Zone Nord,False
+STOP_025,Terminus avenue Marchal,26.984276,0.677242,Zone Nord,True
+STOP_026,Terminus rue Aimée Aubert,-32.179134,-15.034500,Zone Nord,False
+STOP_027,Terminus rue Célina Fouquet,-78.293716,145.302642,Zone Nord,False
+STOP_028,Terminus avenue Durand,-37.514946,53.187460,Banlieue Ouest,False
+STOP_029,Terminus boulevard Bonnin,-17.694080,-65.396319,Centre-ville,True
+STOP_030,Terminus rue de Thomas,73.969121,26.359020,Zone Nord,False
+STOP_031,Terminus rue Guyon,88.486834,15.860953,Zone Nord,True
+STOP_032,Terminus rue Martinez,28.399710,138.644260,Zone Sud,True
+STOP_033,Terminus boulevard Susanne Léger,88.054652,98.785341,Banlieue Ouest,True
+STOP_034,Terminus boulevard Étienne Baudry,-73.682086,164.409684,Banlieue Ouest,False
+STOP_035,Terminus rue de Delahaye,-5.918361,76.597944,Zone Nord,True
+STOP_036,Terminus rue Navarro,28.622080,152.183728,Zone Sud,True
+STOP_037,Terminus boulevard Bonneau,-1.079466,142.169761,Banlieue Ouest,True
+STOP_038,Terminus rue Delannoy,52.749710,162.636250,Centre-ville,False
+STOP_039,Terminus avenue de Rodriguez,-31.480566,-28.857521,Banlieue Ouest,False
+STOP_040,Terminus chemin Noël Masson,-59.391902,166.047944,Centre-ville,True
+STOP_041,Terminus avenue Anaïs Jourdan,8.484242,-8.287115,Banlieue Ouest,True
+STOP_042,Terminus rue Franck Lopez,-63.636437,68.627212,Zone Nord,False
+STOP_043,Terminus rue Guibert,-56.517002,-73.268580,Centre-ville,False
+STOP_044,Terminus rue Christiane Camus,2.890008,46.017797,Zone Nord,True
+STOP_045,Terminus chemin Lévêque,-15.582072,22.934439,Banlieue Ouest,True
+STOP_046,Terminus rue Neveu,42.783666,74.426793,Zone Sud,False
+STOP_047,Terminus rue Arthur Fabre,49.034200,-71.714376,Zone Sud,True
+STOP_048,Terminus chemin Lemonnier,18.540417,97.525393,Zone Nord,True
+STOP_049,Terminus rue de Torres,73.943610,24.000235,Banlieue Ouest,True
+STOP_050,Terminus boulevard Noémi Colin,-33.158061,166.740283,Banlieue Ouest,False
+STOP_051,Terminus rue Gilbert,-32.982454,-106.813463,Zone Nord,False
+STOP_052,Terminus avenue Gauthier,45.885432,-158.279246,Zone Nord,True
+STOP_053,Terminus avenue Alain Ramos,34.011474,11.895814,Zone Sud,True
+STOP_054,Terminus avenue de Louis,-39.869107,176.061805,Banlieue Ouest,False
+STOP_055,Terminus avenue de Fabre,48.523304,99.579640,Zone Nord,True
+STOP_056,Terminus rue Gilbert Thierry,30.244198,13.263301,Banlieue Ouest,False
+STOP_057,Terminus chemin de Vincent,43.183048,14.945650,Banlieue Ouest,True
+STOP_058,Terminus rue de Jean,46.093000,-66.504526,Banlieue Ouest,True
+STOP_059,Terminus rue Leduc,-30.367074,30.897300,Zone Nord,True
+STOP_060,Terminus chemin de Antoine,3.161182,87.308399,Centre-ville,True
+STOP_061,Terminus boulevard Leblanc,32.906634,-9.104276,Zone Sud,True
+STOP_062,Terminus chemin Monique Dubois,21.516600,17.585575,Zone Sud,True
+STOP_063,Terminus boulevard de Bailly,16.039817,-30.490769,Centre-ville,False
+STOP_064,Terminus chemin Gérard,-13.604687,-103.239280,Banlieue Ouest,True
+STOP_065,Terminus chemin de Goncalves,50.225123,-38.295683,Banlieue Ouest,True
+STOP_066,Terminus avenue Eugène Chartier,-71.462793,-4.995285,Zone Nord,False
+STOP_067,Terminus rue de Salmon,77.677723,-171.225930,Banlieue Ouest,False
+STOP_068,Terminus boulevard Anouk Diallo,20.217560,-36.034694,Zone Nord,False
+STOP_069,Terminus rue Mathilde Gosselin,-40.791504,-3.366965,Zone Sud,True
+STOP_070,Terminus chemin Faure,-19.772648,-42.889325,Zone Nord,False
+STOP_071,Terminus rue Margot Lucas,-74.028262,-96.889158,Zone Sud,False
+STOP_072,Terminus boulevard Cécile Clerc,72.249620,168.862341,Zone Nord,True
+STOP_073,Terminus boulevard Roussel,42.061057,120.857522,Centre-ville,True
+STOP_074,Terminus avenue Célina Delannoy,-82.296478,71.606444,Banlieue Ouest,False
+STOP_075,Terminus avenue Morvan,55.777418,-171.660477,Banlieue Ouest,True
+STOP_076,Terminus boulevard Alexandrie Mendès,-2.415506,80.610928,Banlieue Ouest,False
+STOP_077,Terminus chemin Fleury,-89.900144,-25.864874,Zone Sud,True
+STOP_078,Terminus chemin Paulette Duval,-60.506479,75.484930,Zone Nord,False
+STOP_079,Terminus avenue Émilie Lamy,24.844026,-130.922536,Zone Nord,True
+STOP_080,Terminus rue Victor Menard,-81.121678,7.644423,Banlieue Ouest,True
+STOP_081,Terminus rue Lucas,-50.231100,52.036424,Centre-ville,False
+STOP_082,Terminus boulevard Dos Santos,21.903866,-166.231325,Banlieue Ouest,False
+STOP_083,Terminus rue de Fontaine,-38.253828,10.600131,Zone Sud,True
+STOP_084,Terminus avenue Élodie Rey,-46.959730,63.835064,Zone Sud,False
+STOP_085,Terminus rue Juliette Lelièvre,-40.212484,-34.231909,Zone Sud,False
+STOP_086,Terminus chemin Gérard Duval,46.990501,-36.822641,Centre-ville,True
+STOP_087,Terminus rue de Regnier,-18.088432,165.298570,Centre-ville,True
+STOP_088,Terminus chemin de Sauvage,25.778422,1.877189,Zone Sud,False
+STOP_089,Terminus chemin Émilie Bonnin,-35.332396,-65.700309,Banlieue Ouest,False
+STOP_090,Terminus chemin Gomez,41.396879,0.348529,Zone Nord,True
+STOP_091,Terminus rue Roche,56.379209,66.230640,Banlieue Ouest,False
+STOP_092,Terminus chemin de Clerc,20.168456,20.449010,Zone Sud,False
+STOP_093,Terminus chemin Collet,50.671900,-9.399372,Centre-ville,True
+STOP_094,Terminus boulevard de Guyon,32.996228,-101.010842,Zone Sud,False
+STOP_095,Terminus chemin de Hervé,-18.328622,-28.528758,Centre-ville,False
+STOP_096,Terminus rue de Dupré,20.947440,-48.477420,Zone Sud,True
+STOP_097,Terminus rue Anne Caron,-66.708672,130.802094,Zone Nord,False
+STOP_098,Terminus avenue de Giraud,-77.767004,-92.857994,Banlieue Ouest,True
+STOP_099,Terminus rue Auguste Coulon,-28.490646,-122.058665,Zone Sud,True
+STOP_100,Terminus rue Bertrand Fleury,-63.263307,107.092753,Banlieue Ouest,True
