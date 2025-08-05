@@ -96,7 +96,7 @@ services:
       - /home/assane-dione/Bureau/Dataaireflow360/Datalake/Stokages/Stoc_batch/mongo.py:/scripts/mongo.py
       - /home/assane-dione/Bureau/Dataaireflow360/Datalake/Stokages/stoc_scrapin/postgres.py:/scripts/postgres.py
     working_dir: /scripts
-    command: ["python", "postgres.py"]
+    command: ["python", "mongo.py"]
     depends_on:
       - cassandra
       - db
