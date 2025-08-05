@@ -1,0 +1,41 @@
+stop_id,name,latitude,longitude,zone,shelter
+SENGAR_1,Terminus Liberté 5,14.777885,-17.542497,Zone Est,False
+SENGAR_2,Marché Sandaga,14.705006,-17.483037,Zone Est,False
+SENGAR_3,Place de l'Indépendance,14.797294,-17.34699,Zone Est,False
+SENGAR_4,Gare de Rufisque,14.828436,-17.523918,Banlieue,True
+SENGAR_5,Gare de Pikine,14.734384,-17.541061,Centre-ville,False
+SENGAR_6,Terminus Parcelles,14.693728,-17.398393,Zone Nord,True
+SENGAR_7,Gare de Yoff,14.655307,-17.490349,Zone Nord,True
+SENGAR_8,Gare de Guédiawaye,14.779977,-17.386518,Centre-ville,False
+SENGAR_9,Terminus Keur Massar,14.694088,-17.37322,Zone Est,True
+SENGAR_10,Gare de Thiaroye,14.811886,-17.54805,Zone Sud,False
+SENGAR_11,Avenue Cheikh Anta Diop,14.811164,-17.340558,Zone Est,False
+SENGAR_12,Université UCAD,14.71805,-17.503356,Zone Est,False
+SENGAR_13,Gare de Grand Yoff,14.841443,-17.449022,Zone Est,True
+SENGAR_14,Hôpital Fann,14.668549,-17.520985,Zone Nord,False
+SENGAR_15,Gare de Diamniadio,14.819499,-17.368882,Banlieue,True
+SENGAR_16,AIBD,14.811426,-17.33108,Banlieue,False
+SENGAR_17,Centre-ville,14.757246,-17.258065,Centre-ville,False
+SENGAR_18,Gare de Cambérène,14.725707,-17.384388,Zone Nord,False
+SENGAR_19,Pont de Hann,14.815881,-17.364444,Zone Est,True
+SENGAR_20,Gare des Mamelles,14.822341,-17.376794,Zone Est,True
+SENGAR_21,Gare de Ouakam,14.790914,-17.536253,Banlieue,True
+SENGAR_22,Port Autonome,14.69558,-17.463184,Centre-ville,False
+SENGAR_23,Cité Keur Gorgui,14.665958,-17.480163,Centre-ville,True
+SENGAR_24,Cité Mixta,14.6702,-17.466608,Zone Est,False
+SENGAR_25,HLM Grand Médine,14.777137,-17.44055,Zone Sud,True
+SENGAR_26,Cité Djily Mbaye,14.724036,-17.487148,Zone Nord,False
+SENGAR_27,Gare des Parcelles Assainies,14.703396,-17.269004,Banlieue,True
+SENGAR_28,Gare de Colobane,14.779607,-17.367261,Zone Nord,True
+SENGAR_29,Station Sicap Mbao,14.684228,-17.331262,Zone Est,True
+SENGAR_30,Terminus Malika,14.68268,-17.436163,Zone Nord,False
+SENGAR_31,Marché Tilène,14.847905,-17.358,Zone Nord,True
+SENGAR_32,Hôpital Abass Ndao,14.76139,-17.344616,Centre-ville,False
+SENGAR_33,Gare de Médina,14.81857,-17.3172,Zone Est,True
+SENGAR_34,Cité Gadaye,14.69581,-17.54037,Banlieue,False
+SENGAR_35,Zone de Captage,14.713091,-17.469678,Centre-ville,True
+SENGAR_36,Station Patte d'Oie,14.692197,-17.267127,Banlieue,False
+SENGAR_37,Station Grand Dakar,14.825274,-17.455597,Banlieue,False
+SENGAR_38,Station Dalifort,14.781088,-17.43131,Zone Est,False
+SENGAR_39,Station Liberté 6,14.83291,-17.412344,Zone Nord,True
+SENGAR_40,Cité Fadia,14.702976,-17.476012,Centre-ville,True
