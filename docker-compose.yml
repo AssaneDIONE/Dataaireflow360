@@ -124,6 +124,31 @@ services:
     networks:
       - my_network
 
+  mongo-ingester:
+    image: python:3.9
+    container_name: mongo-ingester
+    volumes:
+      - ./mongo_to_hdfs.py:/app/mongo_to_hdfs.py
+      - ./requirements.txt:/app/requirements.txt
+    working_dir: /app
+    command: ["python", "mongo_to_hdfs.py"]
+    depends_on:
+      - namenode
+      - mongodb
+    networks:
+    - my_network
+
+  # sqoop:
+  #   image: dvoros/sqoop:1.4.6
+  #   container_name: sqoop
+  #   depends_on:
+  #     - namenode
+  #     - datanode
+  #   env_file:
+  #     - ./config
+  #   networks:
+  #     - my_network
+
 
   python:
     build:
