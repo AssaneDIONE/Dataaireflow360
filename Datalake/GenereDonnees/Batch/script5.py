@@ -1,6 +1,7 @@
 import csv
 import random
 from faker import Faker
+from datetime import datetime
 
 fake = Faker('fr_FR')
 
@@ -10,19 +11,25 @@ descriptions = [
 ]
 
 # Liste fixe de véhicules
-vehicle_ids = [f"VEH_{i}" for i in range(1000, 1100)]
+vehicle_ids = [f"NUM_{i}" for i in range(1000, 1100)]
 
 with open("incidents.csv", "w", newline='', encoding="utf-8") as file:
     writer = csv.writer(file)
 
     # En-têtes
-    writer.writerow(['incident_id', 'vehicle_id', 'timestamp', 'description', 'delay_minutes', 'severity'])
+    writer.writerow(['Incidents_id', 'vehicle_id', 'timestamp', 'description', 'delay_minutes', 'severity'])
 
     # Générer 100 incidents
     for i in range(100):
-        incident_id = f"INC_{i+300}"
+        incident_id = f"INC_{i + 300}"
         vehicle_id = random.choice(vehicle_ids)
-        timestamp = fake.date_time()
+
+        # Générer une date entre janvier et juin 2025
+        timestamp = fake.date_time_between(
+            start_date=datetime(2025, 1, 1),
+            end_date=datetime(2025, 6, 30)
+        )
+
         description = random.choice(descriptions)
         delay_minutes = random.randint(0, 60)
         severity = random.randint(1, 5)

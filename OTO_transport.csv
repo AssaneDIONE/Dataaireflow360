@@ -1,0 +1,101 @@
+vehicle_id,type_transport,company_name,capacity,fuel_type,status
+NUM_1000,Car rapide,Sen Transit,30,Hybride,actif
+NUM_1001,Bus interurbain,Sen Transit,70,Diesel,en maintenance
+NUM_1002,Taxi-Clin,Tivaouane Express,4,Essence,actif
+NUM_1003,Minicar,SenMobil,20,Diesel,en maintenance
+NUM_1004,Minicar,Sen Transit,20,Hybride,actif
+NUM_1005,Bus interurbain,SEN_transport,70,Hybride,en maintenance
+NUM_1006,Taxi-Clin,Touba Transport,7,Hybride,actif
+NUM_1007,Taxi-Clin,Touba Transport,8,Diesel,actif
+NUM_1008,Bus interurbain,SenMobil,70,Essence,actif
+NUM_1009,Bus interurbain,SEN_transport,80,Diesel,en maintenance
+NUM_1010,Taxi-Clin,Touba Transport,7,Essence,en maintenance
+NUM_1011,Bus interurbain,Keur Transport,60,Diesel,actif
+NUM_1012,Taxi-Clin,Keur Transport,7,Diesel,hors service
+NUM_1013,Bus interurbain,Sen Transit,80,Diesel,en maintenance
+NUM_1014,Taxi-Clin,SEN_transport,4,Essence,en maintenance
+NUM_1015,Taxi-Clin,Tivaouane Express,7,Hybride,hors service
+NUM_1016,Bus interurbain,Touba Transport,70,Essence,hors service
+NUM_1017,Car rapide,Touba Transport,25,Essence,en maintenance
+NUM_1018,Taxi-Clin,Touba Transport,7,Essence,actif
+NUM_1019,Taxi-Clin,Tivaouane Express,8,Essence,actif
+NUM_1020,Bus interurbain,Transcap,60,Hybride,hors service
+NUM_1021,Bus interurbain,Keur Transport,70,Essence,en maintenance
+NUM_1022,Bus interurbain,Touba Transport,80,Hybride,hors service
+NUM_1023,Bus interurbain,Sen Transit,80,Hybride,en maintenance
+NUM_1024,Minicar,Tivaouane Express,25,Essence,hors service
+NUM_1025,Taxi-Clin,Sen Transit,8,Hybride,en maintenance
+NUM_1026,Taxi-Clin,Transcap,4,Diesel,en maintenance
+NUM_1027,Minicar,SEN_transport,30,Hybride,actif
+NUM_1028,Minicar,Keur Transport,20,Hybride,en maintenance
+NUM_1029,Bus interurbain,Touba Transport,60,Diesel,en maintenance
+NUM_1030,Bus interurbain,SenMobil,60,Diesel,en maintenance
+NUM_1031,Taxi-Clin,Sen Transit,8,Hybride,en maintenance
+NUM_1032,Car rapide,SenMobil,25,Diesel,hors service
+NUM_1033,Minicar,Keur Transport,25,Essence,en maintenance
+NUM_1034,Bus interurbain,SenMobil,60,Diesel,en maintenance
+NUM_1035,Taxi-Clin,Touba Transport,8,Hybride,actif
+NUM_1036,Bus interurbain,SEN_transport,80,Essence,en maintenance
+NUM_1037,Car rapide,SenMobil,30,Diesel,hors service
+NUM_1038,Taxi-Clin,SEN_transport,8,Essence,actif
+NUM_1039,Bus interurbain,Transcap,60,Diesel,hors service
+NUM_1040,Car rapide,SenMobil,20,Hybride,actif
+NUM_1041,Car rapide,Touba Transport,25,Diesel,actif
+NUM_1042,Car rapide,Sen Transit,20,Diesel,actif
+NUM_1043,Bus interurbain,SenMobil,80,Hybride,en maintenance
+NUM_1044,Car rapide,Transcap,20,Hybride,en maintenance
+NUM_1045,Bus interurbain,SEN_transport,80,Diesel,hors service
+NUM_1046,Minicar,SEN_transport,20,Diesel,en maintenance
+NUM_1047,Taxi-Clin,SenMobil,7,Diesel,actif
+NUM_1048,Bus interurbain,Sen Transit,60,Hybride,actif
+NUM_1049,Taxi-Clin,Transcap,7,Hybride,hors service
+NUM_1050,Taxi-Clin,Touba Transport,7,Diesel,actif
+NUM_1051,Car rapide,SEN_transport,20,Diesel,actif
+NUM_1052,Car rapide,Touba Transport,25,Diesel,hors service
+NUM_1053,Bus interurbain,Keur Transport,80,Hybride,hors service
+NUM_1054,Minicar,SenMobil,20,Essence,hors service
+NUM_1055,Car rapide,Transcap,30,Hybride,hors service
+NUM_1056,Minicar,Transcap,30,Diesel,en maintenance
+NUM_1057,Taxi-Clin,Keur Transport,8,Hybride,hors service
+NUM_1058,Car rapide,Tivaouane Express,30,Hybride,en maintenance
+NUM_1059,Bus interurbain,Sen Transit,80,Essence,en maintenance
+NUM_1060,Car rapide,SEN_transport,20,Diesel,actif
+NUM_1061,Taxi-Clin,SenMobil,8,Essence,en maintenance
+NUM_1062,Car rapide,Touba Transport,30,Hybride,actif
+NUM_1063,Bus interurbain,SEN_transport,70,Hybride,en maintenance
+NUM_1064,Car rapide,SenMobil,25,Essence,hors service
+NUM_1065,Taxi-Clin,SEN_transport,4,Diesel,actif
+NUM_1066,Car rapide,Tivaouane Express,20,Diesel,en maintenance
+NUM_1067,Taxi-Clin,Transcap,8,Hybride,actif
+NUM_1068,Taxi-Clin,Sen Transit,4,Essence,hors service
+NUM_1069,Car rapide,SenMobil,20,Essence,en maintenance
+NUM_1070,Taxi-Clin,SEN_transport,8,Hybride,actif
+NUM_1071,Bus interurbain,Transcap,70,Hybride,hors service
+NUM_1072,Minicar,Keur Transport,30,Diesel,en maintenance
+NUM_1073,Minicar,Sen Transit,25,Essence,actif
+NUM_1074,Taxi-Clin,SenMobil,8,Essence,hors service
+NUM_1075,Bus interurbain,SenMobil,80,Hybride,en maintenance
+NUM_1076,Minicar,Sen Transit,25,Essence,en maintenance
+NUM_1077,Taxi-Clin,Tivaouane Express,8,Essence,actif
+NUM_1078,Bus interurbain,SEN_transport,80,Essence,en maintenance
+NUM_1079,Car rapide,Touba Transport,20,Essence,hors service
+NUM_1080,Bus interurbain,Tivaouane Express,60,Diesel,actif
+NUM_1081,Taxi-Clin,Transcap,4,Hybride,hors service
+NUM_1082,Car rapide,Tivaouane Express,20,Diesel,en maintenance
+NUM_1083,Bus interurbain,SenMobil,80,Essence,en maintenance
+NUM_1084,Minicar,Keur Transport,25,Essence,hors service
+NUM_1085,Taxi-Clin,SEN_transport,4,Hybride,hors service
+NUM_1086,Taxi-Clin,Tivaouane Express,7,Hybride,en maintenance
+NUM_1087,Minicar,Transcap,25,Hybride,actif
+NUM_1088,Minicar,Keur Transport,25,Essence,hors service
+NUM_1089,Taxi-Clin,Tivaouane Express,7,Hybride,en maintenance
+NUM_1090,Minicar,SenMobil,25,Diesel,actif
+NUM_1091,Taxi-Clin,SenMobil,4,Hybride,en maintenance
+NUM_1092,Car rapide,Touba Transport,20,Hybride,en maintenance
+NUM_1093,Bus interurbain,Keur Transport,70,Hybride,en maintenance
+NUM_1094,Car rapide,Transcap,30,Hybride,hors service
+NUM_1095,Bus interurbain,Keur Transport,70,Diesel,hors service
+NUM_1096,Minicar,SEN_transport,30,Essence,hors service
+NUM_1097,Minicar,Tivaouane Express,25,Essence,en maintenance
+NUM_1098,Minicar,Transcap,30,Hybride,hors service
+NUM_1099,Bus interurbain,Keur Transport,80,Essence,en maintenance

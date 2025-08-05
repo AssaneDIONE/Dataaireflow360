@@ -1,0 +1,121 @@
+version: '3.8'
+
+services:
+
+  cassandra:
+    image: cassandra:latest
+    container_name: cassandra2
+    ports:
+      - "9042:9042"
+    environment:
+      - CASSANDRA_CLUSTER_NAME=TestCluster
+      - CASSANDRA_DC=DC1
+      - CASSANDRA_RACK=Rack1
+    volumes:
+      - cassandra_data1:/var/lib/cassandra
+    networks:
+      - my_network
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data1:/data/db
+    networks:
+      - my_network
+
+  db:
+    image: postgres
+    restart: always
+    shm_size: 128mb
+    ports:
+      - "5433:5432"
+    container_name: db_postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+    volumes:
+      - db_postgres:/var/lib/postgresql/data
+    networks:
+      - my_network
+  adminer:
+    image: adminer
+    restart: always
+    container_name: adminer
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    networks:
+      - my_network
+
+  zookeeper:
+    image: bitnami/zookeeper:latest
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+    networks:
+      - my_network
+  kafka:
+    image: bitnami/kafka:latest
+    container_name: kafka
+    networks:
+      - my_network
+    environment:
+      - KAFKA_CFG_NODE_ID=0
+      - KAFKA_CFG_PROCESS_ROLES=controller,broker
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka:9093
+      - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+
+
+  python:
+    build:
+      context: .
+      dockerfile: /home/assane-dione/Bureau/Dataaireflow360/Datalake/Stokages/stoc_scraping/Dockerfile
+    container_name: python-DATAAIREFLOW360
+    environment:
+      - DOCKER_ENV=true
+      - POSTGRES_HOST=db
+      - POSTGRES_DB=dataaireflow360
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - /home/assane-dione/Bureau/Dataaireflow360:/app
+      - /home/assane-dione/Bureau/Dataaireflow360/Datalake/Stokages/global/cassandra.py:/scripts/cassandra.py
+      - /home/assane-dione/Bureau/Dataaireflow360/Datalake/Stokages/Stoc_batch/mongo.py:/scripts/mongo.py
+      - /home/assane-dione/Bureau/Dataaireflow360/Datalake/Stokages/stoc_scrapin/postgres.py:/scripts/postgres.py
+    working_dir: /scripts
+    command: ["python", "postgres.py"]
+    depends_on:
+      - cassandra
+      - db
+      - mongodb
+      - kafka
+    networks:
+      - my_network
+
+
+
+
+
+volumes:
+  db_postgres:
+  cassandra_data1:
+  mongodb_data1:
+
+
+networks:
+  my_network:
+ 
+
