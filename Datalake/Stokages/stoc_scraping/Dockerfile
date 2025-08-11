@@ -4,8 +4,14 @@ FROM python:3.11
 RUN apt-get update && apt-get install -y \
     libpq-dev gcc
 
-# Installer psycopg2-binary (version compilée)
-RUN pip install psycopg2-binary
+# Installer les dépendances Python
+RUN pip install psycopg2-binary pymongo
 
-# Copier ton dossier de travail
-WORKDIR /scripts
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Copier les scripts dans l'image Docker
+COPY . /app
+
+# Commande par défaut
+CMD ["python", "mongo-to-hdfs.py"]

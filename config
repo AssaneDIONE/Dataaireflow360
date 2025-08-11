@@ -22,5 +22,5 @@ CAPACITY-SCHEDULER.XML_yarn.scheduler.capacity.root.default.state=RUNNING
 CAPACITY-SCHEDULER.XML_yarn.scheduler.capacity.root.default.acl_submit_applications=*
 CAPACITY-SCHEDULER.XML_yarn.scheduler.capacity.root.default.acl_administer_queue=*
 CAPACITY-SCHEDULER.XML_yarn.scheduler.capacity.node-locality-delay=40
-CAPACITY-SCHEDULER.XML_yarn.scheduler.capacity.queue-mappings=
+CAPACITY-SCHEDULER.XML_yarn.scheduler.capacity.queue-mappings=""
 CAPACITY-SCHEDULER.XML_yarn.scheduler.capacity.queue-mappings-override.enable=false

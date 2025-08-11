@@ -1,3 +1,189 @@
+# version: '3.8'
+
+# services:
+
+#   cassandra:
+#     image: cassandra:latest
+#     restart: always
+#     container_name: cassandra2
+#     ports:
+#       - "9042:9042"
+#     environment:
+#       - CASSANDRA_CLUSTER_NAME=TestCluster
+#       - CASSANDRA_DC=DC1
+#       - CASSANDRA_RACK=Rack1
+#     volumes:
+#       - cassandra_data1:/var/lib/cassandra
+#     networks:
+#       - my_network
+
+#   mongodb:
+#     image: mongo:latest
+#     restart: always
+#     container_name: mongodb
+#     ports:
+#       - "27017:27017"
+#     volumes:
+#       - mongodb_data1:/data/db
+#     networks:
+#       - my_network
+
+#   db:
+#     image: postgres
+#     restart: always
+#     shm_size: 128mb
+#     ports:
+#       - "5433:5432"
+#     container_name: db_postgres
+#     environment:
+#       POSTGRES_USER: ${POSTGRES_USER}
+#       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+#     volumes:
+#       - db_postgres:/var/lib/postgresql/data
+#       - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+#     networks:
+#       - my_network
+
+#   adminer:
+#     image: adminer
+#     restart: always
+#     container_name: adminer
+#     ports:
+#       - 8080:8080
+#     depends_on:
+#       - db
+#     networks:
+#       - my_network
+
+#   zookeeper:
+#     image: bitnami/zookeeper:latest
+#     restart: always
+#     container_name: zookeeper
+#     ports:
+#       - "2181:2181"
+#     environment:
+#       - ALLOW_ANONYMOUS_LOGIN=yes
+#     networks:
+#       - my_network
+
+#   kafka:
+#     image: bitnami/kafka:latest
+#     restart: always
+#     container_name: kafka
+#     networks:
+#       - my_network
+#     environment:
+#       - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+#       - ALLOW_PLAINTEXT_LISTENER=yes
+#       - KAFKA_LISTENERS=PLAINTEXT://:9092
+#       - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092
+#     depends_on:
+#       - zookeeper
+#     ports:
+#       - "9092:9092"
+
+#   namenode:
+#     image: apache/hadoop:3
+#     restart: always
+#     hostname: namenode
+#     container_name: namenode
+#     command: ["hdfs", "namenode"]
+#     ports:
+#       - 9870:9870
+#     env_file:
+#       - ./config
+#     environment:
+#       ENSURE_NAMENODE_DIR: "/tmp/hadoop-root/dfs/name"
+#       CLUSTER_NAME: "test"
+#     volumes:
+#       - namenode_data:/tmp/hadoop-root/dfs/name
+#     networks:
+#       - my_network
+
+#   datanode:
+#     image: apache/hadoop:3
+#     restart: always
+#     container_name: datanode
+#     command: ["hdfs", "datanode"]
+#     env_file:
+#       - ./config
+#     depends_on:
+#       - namenode
+#     networks:
+#       - my_network
+
+#   resourcemanager:
+#     image: apache/hadoop:3
+#     restart: always
+#     hostname: resourcemanager
+#     container_name: resourcemanager
+#     command: ["yarn", "resourcemanager"]
+#     ports:
+#       - 8088:8088
+#     env_file:
+#       - ./config
+#     volumes:
+#       - ./test.sh:/opt/test.sh
+#     depends_on:
+#       - namenode
+#     networks:
+#       - my_network
+
+#   nodemanager:
+#     image: apache/hadoop:3
+#     restart: always
+#     container_name: nodemanager
+#     command: ["yarn", "nodemanager"]
+#     env_file:
+#       - ./config
+#     depends_on:
+#       - resourcemanager
+#     networks:
+#       - my_network
+
+#   mongo-ingester:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     restart: always
+#     container_name: mongo-ingester
+#     command: ["python", "post_hadoop.py"]
+#     depends_on:
+#       - namenode
+#       - mongodb
+#       - db
+#     networks:
+#       - my_network
+
+#   python:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     restart: always
+#     container_name: python-DATAAIREFLOW360
+#     environment:
+#       - DOCKER_ENV=true
+#       - POSTGRES_HOST=db
+#       - POSTGRES_DB=dataaireflow360
+#       - POSTGRES_USER=postgres
+#       - POSTGRES_PASSWORD=password
+#     depends_on:
+#       - cassandra
+#       - db
+#       - mongodb
+#       - kafka
+#     networks:
+#       - my_network
+
+# volumes:
+#   db_postgres:
+#   cassandra_data1:
+#   mongodb_data1:
+#   namenode_data:
+
+# networks:
+#   my_network:
+
 version: '3.8'
 
 services:
@@ -85,10 +271,13 @@ services:
     command: ["hdfs", "namenode"]
     ports:
       - 9870:9870
+    volumes:
+      - namenode_data:/hadoop/dfs/name
+      - /tmp:/tmp
     env_file:
       - ./config
     environment:
-      ENSURE_NAMENODE_DIR: "/tmp/hadoop-root/dfs/name"
+      ENSURE_NAMENODE_DIR: "/hadoop/dfs/name"
     networks:
       - my_network
 
@@ -98,6 +287,8 @@ services:
     command: ["hdfs", "datanode"]
     env_file:
       - ./config
+    ports:
+      - "9864:9864"
     networks:
       - my_network
 
@@ -128,13 +319,15 @@ services:
     image: python:3.9
     container_name: mongo-ingester
     volumes:
-      - ./mongo_to_hdfs.py:/app/mongo_to_hdfs.py
+      - ./Stokages/global:/app/scripts
+      - ./Stokages/global:/app/data
       - ./requirements.txt:/app/requirements.txt
     working_dir: /app
     command: ["python", "mongo_to_hdfs.py"]
     depends_on:
       - namenode
       - mongodb
+      - db
     networks:
     - my_network
 
@@ -184,9 +377,10 @@ volumes:
   db_postgres:
   cassandra_data1:
   mongodb_data1:
+  mongo-ingester:
+  namenode_data:
 
 
 networks:
   my_network:
  
-

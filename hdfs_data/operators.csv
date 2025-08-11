@@ -1,0 +1,101 @@
+id,operator_name,city,state_province,country
+1,Union City Transit,,California,"United States of AmericaSan Mateo, San Mateo"
+2,Santa Rosa CityBus,,California,United States of AmericaSanta Rosa
+3,San Francisco International Airport,,California,United States of AmericaSan Mateo
+4,Alameda-Contra Costa Transit District(AC Transit),Berkeley,California,"United States of AmericaBerkeley, Oakland"
+5,The Victoria Clipper,,British Columbia,CanadaVictoria
+6,Byron Easybus,Lismore,New South Wales,"AustraliaLismore, Brisbane"
+7,De Waterbus(Aqualiner),,East Flanders,BelgiumAntwerpen
+8,Adelaide Metro (SouthLink),Adelaide,South Australia,AustraliaAdelaide
+9,Adelaide Metro - Light-City Buses,,,
+10,Adelaide Metro - Light-City Buses School Service,,,
+11,Adelaide Metro - Torrens Transit School Service,Adelaide,South Australia,AustraliaAdelaide
+12,Adelaide Metro,Adelaide,South Australia,AustraliaAdelaide
+13,Adelaide Metro - SouthLink School Service,,South Australia,AustraliaAdelaide
+14,Adelaide Metro - Light-City Buses Industrial Service,,,
+15,Adelaide Metro - Torrens Transit,Adelaide,South Australia,AustraliaAdelaide
+16,Adelaide Metro - Torrens Transit Industrial Service,,South Australia,AustraliaAdelaide
+17,Akron Metro Regional Transit Authority,Akron,Ohio,United States of AmericaAkron
+18,GIRO - Transportes Urbanos(GIRO),Faro,Faro,"PortugalFaro, Portimão"
+19,Próximo - Transportes Urbanos de Faro(Próximo),,Faro,PortugalFaro
+20,Sobe e Desce - Transportes Urbanos de Tavira(Sobe e Desce),,Faro,PortugalFaro
+21,Vamus Transportes do Algarve(Vamus),Portimão,Faro,"PortugalPortimão, Faro"
+22,A Onda - Mobilidade Urbana(A Onda),,Faro,PortugalPortimão
+23,Apanha-me! - Transportes Urbanos(Apanha-me!),,Faro,PortugalFaro
+24,Circuito Olhão(Circuito Olhão),,Faro,PortugalFaro
+25,Alilaguna,,Venezia,ItalyVenice
+26,Amarillo City Transit,,Texas,United States of AmericaAmarillo
+27,Azienda Trasporti Milanesi(ATM),,Milano,ItalyMilan
+28,RoadRunneR Shuttle,Los Alamos,New Mexico,"United States of AmericaLos Alamos, Santa Fe"
+29,Wisconsin Coach Lines,,,
+30,Sunway Charters,,North Carolina,United States of America
+31,Amtrak California,,,
+32,Lone Star Coaches,,,
+33,Burlington Trailways,,,
+34,Trinity Transportation,,,
+35,Martz First Class Coach,,,
+36,Annett Bus Lines,,,
+37,Vandalia Bus Lines,,,
+38,Executive Transportation,Carbondale,Illinois,"United States of AmericaCarbondale, Galesburg, Peoria, Springfield"
+39,Azienda Napoletana Mobilità(ANM),,Napoli,ItalyNaples
+40,Kingston Transit,,Ontario,CanadaKingston
+41,Ginko(Ginko),,Doubs,FranceBesançon
+42,Thunder Bay Transit,Thunder Bay,Ontario,CanadaThunder Bay
+43,Des Moines Area Regional Transit Authority(DART),,Iowa,United States of AmericaDes Moines
+44,Suburban Mobility Authority for Regional Transit(SMART),Pontiac,Michigan,"United States of AmericaPontiac, Detroit"
+45,Weekendbus,,Budapest,HungaryBudapest
+46,Saskatoon Transit,,Saskatchewan,CanadaSaskatoon
+47,Arlington Transit(ART),Alexandria,Virginia,United States of AmericaAlexandria
+48,Azienda Regionale Sarda Trasporti(ARST),Cagliari,Cagliari,ItalyCagliari
+49,KU on Wheels & Lawrence Transit System(Lawrence Transit),,Kansas,United States of AmericaLawrence
+50,ATM - Azienda Trasporti di Messina,,Messina,Italy
+51,AUTNA SL(autna),Vigo,Pontevedra,"SpainVigo, Viana Do Castelo, Porto"
+52,Azienda Varesina Trasporti,,Varese,Italy
+53,Bay Area Rapid Transit(BART),Oakland,California,"United States of AmericaOakland, San Francisco"
+54,Ben Franklin Transit(BFT),Richland,Washington,"United States of AmericaRichland, Kennewick"
+55,Budapesti Közlekedési Központ(BKK),,Budapest,HungaryBudapest
+56,Butte Regional Transit(B-Line),Chico,California,United States of AmericaChico
+57,Brampton Transit,Toronto,Ontario,CanadaToronto
+58,Blacksburg Transit(BT),Blacksburg,Virginia,United States of AmericaBlacksburg
+59,Mountain Mobility,,North Carolina,United States of AmericaAsheville
+60,Apple Line,,Washington,United States of America
+61,Gold Line,Spokane,Washington,United States of AmericaSpokane
+62,Washington State Ferries(WSF),,Washington,United States of AmericaBellingham
+63,Butler County Regional Transit Authority,Cincinnati,Ohio,"United States of AmericaCincinnati, Dayton"
+64,Clark County Public Transportation Benefit Area(C-TRAN),,Washington,United States of AmericaVancouver
+65,Caltrain,San Jose,California,"United States of AmericaSan Jose, San Mateo"
+66,Capitol Corridor Joint Powers Authority(Capitol Corridor),Sacramento,California,"United States of AmericaSacramento, Vallejo, Oakland"
+67,Centre County Transit Authority(CATA),State College,Pennsylvania,United States of AmericaState College
+68,County Connection(CCCTA),Berkeley,California,United States of AmericaBerkeley
+69,Birkenhead Transport,,,
+70,Capital District Transportation Authority(CDTA),Albany,New York,United States of AmericaAlbany
+71,Centro,Syracuse,New York,United States of AmericaSyracuse
+72,青森市営バス,,Aomori,JapanAomori
+73,青森市市民バス(市民バス),,Aomori,JapanAomori
+74,福岡市営渡船(Municipality of Fukuoka),,Fukuoka,JapanFukuoka
+75,のみバス,,Ishikawa,JapanKanazawa
+76,Clarksville Transit,,Tennessee,United States of AmericaClarksville
+77,City of Lompoc Transit (COLT),Santa Maria,California,United States of AmericaSanta Maria
+78,Transit Windsor,Windsor,Ontario,CanadaWindsor
+79,Fairbanks North Star Borough Department of Transportation(Metropolitan Area Commuter System (MACS) Transit),Fairbanks,Alaska,United States of AmericaFairbanks
+80,City of Kobe,,Hyōgo,Japan
+81,Mountain Metropolitan Transit(Mountain Metro),,Colorado,United States of AmericaColorado Springs
+82,Community Transit(CT),Everett,Washington,United States of AmericaEverett
+83,AMAT Palermo(AMAT),,Palermo,Italy
+84,Connect Transit,,Illinois,United States of AmericaBloomington
+85,The Rapid,Grand Rapids,Michigan,United States of AmericaGrand Rapids
+86,Solano County Transit(SolTrans),Vallejo,California,United States of AmericaVallejo
+87,NYC Ferry,,New York,United States of AmericaNew York
+88,Greater Mankato Transit System,Mankato,Minnesota,United States of AmericaMankato
+89,Central Ohio Transit Authority(COTA),,Ohio,United States of AmericaColumbus
+90,Metro de Madrid(Metro),,Madrid,SpainMadrid
+91,Autolinee Varesine - Trasporto Urbano(TUV),,,
+92,Autolinee Varesine - Trasporto Extraurbano,,,
+93,Connecticut Department of Transportation (ConnDOT)(CTtransit),New Haven,Connecticut,"United States of AmericaNew Haven, Hartford"
+94,Cache Valley Transit District(CVTD),,Utah,United States of AmericaLogan
+95,CyRide,,Iowa,United States of AmericaAmes
+96,Fetranspor,Nova Iguaçu,Rio de Janeiro,"BrazilNova Iguaçu, Duque de Caxias, Rio de Janeiro"
+97,Dallas Area Rapid Transit(DART),Dallas,Texas,United States of AmericaDallas
+98,Transdev Royan Atlantique(Carabus),,Charente-Maritime,France
+99,Subterráneos de Buenos Aires(SUBTE),,Ciudad de Buenos Aires,ArgentinaBuenos Aires
+100,ABQ RIDE,,New Mexico,United States of AmericaAlbuquerque
