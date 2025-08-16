@@ -4,7 +4,6 @@
 
 #   cassandra:
 #     image: cassandra:latest
-#     restart: always
 #     container_name: cassandra2
 #     ports:
 #       - "9042:9042"
@@ -19,7 +18,6 @@
 
 #   mongodb:
 #     image: mongo:latest
-#     restart: always
 #     container_name: mongodb
 #     ports:
 #       - "27017:27017"
@@ -38,12 +36,11 @@
 #     environment:
 #       POSTGRES_USER: ${POSTGRES_USER}
 #       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
 #     volumes:
 #       - db_postgres:/var/lib/postgresql/data
-#       - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
 #     networks:
 #       - my_network
-
 #   adminer:
 #     image: adminer
 #     restart: always
@@ -57,7 +54,6 @@
 
 #   zookeeper:
 #     image: bitnami/zookeeper:latest
-#     restart: always
 #     container_name: zookeeper
 #     ports:
 #       - "2181:2181"
@@ -65,18 +61,18 @@
 #       - ALLOW_ANONYMOUS_LOGIN=yes
 #     networks:
 #       - my_network
-
 #   kafka:
 #     image: bitnami/kafka:latest
-#     restart: always
 #     container_name: kafka
 #     networks:
 #       - my_network
 #     environment:
-#       - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
-#       - ALLOW_PLAINTEXT_LISTENER=yes
-#       - KAFKA_LISTENERS=PLAINTEXT://:9092
-#       - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092
+#       - KAFKA_CFG_NODE_ID=0
+#       - KAFKA_CFG_PROCESS_ROLES=controller,broker
+#       - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093
+#       - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+#       - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka:9093
+#       - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
 #     depends_on:
 #       - zookeeper
 #     ports:
@@ -84,37 +80,38 @@
 
 #   namenode:
 #     image: apache/hadoop:3
-#     restart: always
 #     hostname: namenode
 #     container_name: namenode
 #     command: ["hdfs", "namenode"]
 #     ports:
 #       - 9870:9870
+#     volumes:
+#       - namenode_data:/hadoop/dfs/name
+#       - /tmp:/tmp
 #     env_file:
 #       - ./config
 #     environment:
-#       ENSURE_NAMENODE_DIR: "/tmp/hadoop-root/dfs/name"
-#       CLUSTER_NAME: "test"
-#     volumes:
-#       - namenode_data:/tmp/hadoop-root/dfs/name
+#       ENSURE_NAMENODE_DIR: "/hadoop/dfs/name"
 #     networks:
 #       - my_network
 
 #   datanode:
 #     image: apache/hadoop:3
-#     restart: always
 #     container_name: datanode
 #     command: ["hdfs", "datanode"]
 #     env_file:
 #       - ./config
+#     ports:
+#       - "9864:9864"
 #     depends_on:
 #       - namenode
+#     volumes:
+#       - datanode_data:/hadoop/dfs/data
 #     networks:
 #       - my_network
 
 #   resourcemanager:
 #     image: apache/hadoop:3
-#     restart: always
 #     hostname: resourcemanager
 #     container_name: resourcemanager
 #     command: ["yarn", "resourcemanager"]
@@ -124,30 +121,27 @@
 #       - ./config
 #     volumes:
 #       - ./test.sh:/opt/test.sh
-#     depends_on:
-#       - namenode
 #     networks:
 #       - my_network
 
 #   nodemanager:
 #     image: apache/hadoop:3
-#     restart: always
 #     container_name: nodemanager
 #     command: ["yarn", "nodemanager"]
 #     env_file:
 #       - ./config
-#     depends_on:
-#       - resourcemanager
 #     networks:
 #       - my_network
 
 #   mongo-ingester:
-#     build:
-#       context: .
-#       dockerfile: Dockerfile
-#     restart: always
+#     image: python:3.9
 #     container_name: mongo-ingester
-#     command: ["python", "post_hadoop.py"]
+#     volumes:
+#       - ./Stokages/global:/app/scripts
+#       - ./Stokages/global:/app/data
+#       - ./requirements.txt:/app/requirements.txt
+#     working_dir: /app
+#     command: ["python", "mongo_to_hdfs.py"]
 #     depends_on:
 #       - namenode
 #       - mongodb
@@ -155,11 +149,38 @@
 #     networks:
 #       - my_network
 
+#   spark:
+#     image: bitnami/spark:latest
+#     container_name: spark
+#     ports:
+#       - 7077:7077
+#       - "8081:8080"
+#     networks:
+#       - my_network
+#     depends_on:
+#       - namenode
+#       - datanode
+#     environment:
+#       - SPARK_MODE=master
+#   spark-worker:
+#     image: bitnami/spark:latest
+#     container_name: worker_1
+#     environment:
+#       - SPARK_MODE=worker
+#       - SPARK_MASTER_URL=spark://spark:7077
+#       - SPARK_RPC_AUTHENTICATION_ENABLED=no
+#       - SPARK_RPC_ENCRYPTION_ENABLED=no
+#       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+#       - SPARK_SSL_ENABLED=no
+#       - SPARK_WORKER_CORES=4
+#       - SPARK_WORKER_MEMORY=9G
+#     networks:
+#       - my_network
+
 #   python:
 #     build:
 #       context: .
-#       dockerfile: Dockerfile
-#     restart: always
+#       dockerfile: /home/assane-dione/Bureau/Dataaireflow360/Datalake/Stokages/stoc_scraping/Dockerfile
 #     container_name: python-DATAAIREFLOW360
 #     environment:
 #       - DOCKER_ENV=true
@@ -167,6 +188,13 @@
 #       - POSTGRES_DB=dataaireflow360
 #       - POSTGRES_USER=postgres
 #       - POSTGRES_PASSWORD=password
+#     volumes:
+#       - /home/assane-dione/Bureau/Dataaireflow360:/app
+#       - /home/assane-dione/Bureau/Dataaireflow360/Datalake/Stokages/global/cassandra.py:/scripts/cassandra.py
+#       - /home/assane-dione/Bureau/Dataaireflow360/Datalake/Stokages/Stoc_batch/mongo.py:/scripts/mongo.py
+#       - /home/assane-dione/Bureau/Dataaireflow360/Datalake/Stokages/stoc_scrapin/postgres.py:/scripts/postgres.py
+#     working_dir: /scripts
+#     command: ["python", "mongo.py"]
 #     depends_on:
 #       - cassandra
 #       - db
@@ -175,14 +203,22 @@
 #     networks:
 #       - my_network
 
+
+
+
+
 # volumes:
 #   db_postgres:
 #   cassandra_data1:
 #   mongodb_data1:
+#   mongo-ingester:
 #   namenode_data:
+#   datanode_data:
+
 
 # networks:
 #   my_network:
+ 
 
 version: '3.8'
 
@@ -194,9 +230,9 @@ services:
     ports:
       - "9042:9042"
     environment:
-      - CASSANDRA_CLUSTER_NAME=TestCluster
-      - CASSANDRA_DC=DC1
-      - CASSANDRA_RACK=Rack1
+      - CASSANDRA_CLUSTER_NAME=${CASSANDRA_CLUSTER_NAME:-TestCluster}
+      - CASSANDRA_DC=${CASSANDRA_DC:-DC1}
+      - CASSANDRA_RACK=${CASSANDRA_RACK:-Rack1}
     volumes:
       - cassandra_data1:/var/lib/cassandra
     networks:
@@ -207,34 +243,38 @@ services:
     container_name: mongodb
     ports:
       - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USER:-root}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD:-monmongo}
     volumes:
       - mongodb_data1:/data/db
     networks:
       - my_network
 
-  db:
-    image: postgres
+  db_postgres:
+    image: postgres:13
     restart: always
     shm_size: 128mb
     ports:
       - "5433:5432"
     container_name: db_postgres
     environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-
+      POSTGRES_USER: ${POSTGRES_USER:-dione}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-Pass123}
+      POSTGRES_DB: ${POSTGRES_DB:-dataaireflow360}
     volumes:
       - db_postgres:/var/lib/postgresql/data
     networks:
       - my_network
+
   adminer:
     image: adminer
     restart: always
     container_name: adminer
     ports:
-      - 8080:8080
+      - "8080:8080"
     depends_on:
-      - db
+      - db_postgres
     networks:
       - my_network
 
@@ -247,6 +287,7 @@ services:
       - ALLOW_ANONYMOUS_LOGIN=yes
     networks:
       - my_network
+
   kafka:
     image: bitnami/kafka:latest
     container_name: kafka
@@ -259,62 +300,113 @@ services:
       - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
       - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka:9093
       - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+      - KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE=true
     depends_on:
       - zookeeper
     ports:
       - "9092:9092"
 
+  # Configuration Hadoop
   namenode:
-    image: apache/hadoop:3
-    hostname: namenode
+    image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
     container_name: namenode
-    command: ["hdfs", "namenode"]
+    restart: always
     ports:
-      - 9870:9870
+      - "9870:9870"
+      - "9000:9000"
     volumes:
       - namenode_data:/hadoop/dfs/name
-      - /tmp:/tmp
-    env_file:
-      - ./config
     environment:
-      ENSURE_NAMENODE_DIR: "/hadoop/dfs/name"
+      - CLUSTER_NAME=test
+      - CORE_CONF_fs_defaultFS=hdfs://namenode:9000
+      - CORE_CONF_hadoop_http_staticuser_user=root
+      - CORE_CONF_hadoop_proxyuser_hue_hosts=*
+      - CORE_CONF_hadoop_proxyuser_hue_groups=*
+      - HDFS_CONF_dfs_webhdfs_enabled=true
+      - HDFS_CONF_dfs_permissions_enabled=false
+      - HDFS_CONF_dfs_namenode_datanode_registration_ip___hostname___check=false
     networks:
       - my_network
 
   datanode:
-    image: apache/hadoop:3
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
     container_name: datanode
-    command: ["hdfs", "datanode"]
-    env_file:
-      - ./config
+    restart: always
+    volumes:
+      - datanode_data:/hadoop/dfs/data
+    environment:
+      SERVICE_PRECONDITION: "namenode:9870"
+      CORE_CONF_fs_defaultFS: hdfs://namenode:9000
     ports:
       - "9864:9864"
+    depends_on:
+      - namenode
     networks:
       - my_network
 
   resourcemanager:
-    image: apache/hadoop:3
-    hostname: resourcemanager
+    image: bde2020/hadoop-resourcemanager:2.0.0-hadoop3.2.1-java8
     container_name: resourcemanager
-    command: ["yarn", "resourcemanager"]
+    restart: always
+    environment:
+      SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
     ports:
-      - 8088:8088
-    env_file:
-      - ./config
+      - "8088:8088"
+    depends_on:
+      - namenode
+      - datanode
     volumes:
       - ./test.sh:/opt/test.sh
     networks:
       - my_network
 
   nodemanager:
-    image: apache/hadoop:3
+    image: bde2020/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8
     container_name: nodemanager
-    command: ["yarn", "nodemanager"]
-    env_file:
-      - ./config
+    restart: always
+    environment:
+      SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
+    ports:
+      - "8042:8042"
+    depends_on:
+      - namenode
+      - datanode
+      - resourcemanager
     networks:
       - my_network
 
+  spark:
+    image: bitnami/spark:latest
+    container_name: spark
+    ports:
+      - "7077:7077"
+      - "8081:8080"
+    networks:
+      - my_network
+    depends_on:
+      - namenode
+    environment:
+      - SPARK_MODE=master
+      - SPARK_MASTER_HOST=0.0.0.0
+
+  spark-worker:
+    image: bitnami/spark:latest
+    container_name: worker_1
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark:7077
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+      - SPARK_WORKER_CORES=4
+      - SPARK_WORKER_MEMORY=9G
+    networks:
+      - my_network
+    depends_on:
+      - spark
+
+  # Services applicatifs - démarrent après un délai
   mongo-ingester:
     image: python:3.9
     container_name: mongo-ingester
@@ -323,26 +415,22 @@ services:
       - ./Stokages/global:/app/data
       - ./requirements.txt:/app/requirements.txt
     working_dir: /app
-    command: ["python", "mongo_to_hdfs.py"]
+    command: ["sh", "-c", "pip install pymongo && sleep 180 && python scripts/mongo_to_hdfs.py"]  # Augmenté à 180s
+    environment:
+      - MONGO_HOST=mongodb
+      - MONGO_USER=${MONGO_USER:-root}
+      - MONGO_PASSWORD=${MONGO_PASSWORD:-monmongo}
+      - MONGO_PORT=27017
+      - MONGO_DB=testdb
+      - DOCKER_ENV=true
     depends_on:
       - namenode
+      - datanode
       - mongodb
-      - db
+      - db_postgres
     networks:
-    - my_network
-
-  # sqoop:
-  #   image: dvoros/sqoop:1.4.6
-  #   container_name: sqoop
-  #   depends_on:
-  #     - namenode
-  #     - datanode
-  #   env_file:
-  #     - ./config
-  #   networks:
-  #     - my_network
-
-
+      - my_network
+    restart: "no"
   python:
     build:
       context: .
@@ -350,37 +438,37 @@ services:
     container_name: python-DATAAIREFLOW360
     environment:
       - DOCKER_ENV=true
-      - POSTGRES_HOST=db
-      - POSTGRES_DB=dataaireflow360
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_HOST=db_postgres
+      - POSTGRES_DB=${POSTGRES_DB:-dataaireflow360}
+      - POSTGRES_USER=${POSTGRES_USER:-dione}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-Pass123}
+      - MONGO_HOST=mongodb
+      - MONGO_USER=${MONGO_USER:-root}
+      - MONGO_PASSWORD=${MONGO_PASSWORD:-monmongo}
+      - CASSANDRA_HOST=cassandra2
+      - CASSANDRA_CLUSTER_NAME=${CASSANDRA_CLUSTER_NAME:-TestCluster}
     volumes:
       - /home/assane-dione/Bureau/Dataaireflow360:/app
       - /home/assane-dione/Bureau/Dataaireflow360/Datalake/Stokages/global/cassandra.py:/scripts/cassandra.py
       - /home/assane-dione/Bureau/Dataaireflow360/Datalake/Stokages/Stoc_batch/mongo.py:/scripts/mongo.py
       - /home/assane-dione/Bureau/Dataaireflow360/Datalake/Stokages/stoc_scrapin/postgres.py:/scripts/postgres.py
     working_dir: /scripts
-    command: ["python", "mongo.py"]
+    command: ["sh", "-c", "sleep 90 && python mongo.py"]
     depends_on:
       - cassandra
-      - db
+      - db_postgres
       - mongodb
       - kafka
     networks:
       - my_network
 
-
-
-
-
 volumes:
   db_postgres:
   cassandra_data1:
   mongodb_data1:
-  mongo-ingester:
   namenode_data:
-
+  datanode_data:
 
 networks:
   my_network:
- 
+    driver: bridge

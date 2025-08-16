@@ -1,0 +1,3 @@
+#!/home/assane-dione/Bureau/Dataaireflow360/venv/bin/python3
+from spark import spark_admin
+spark_admin.main()
