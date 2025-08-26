@@ -1,7 +1,0 @@
-[2025-08-15 00:35:02] 🚀 DÉBUT TRAITEMENT LOCAL ETL
-[2025-08-15 00:35:02] 📁 Fichiers CSV trouvés: 0
-[2025-08-15 00:35:02] ❌ Aucun fichier CSV trouvé
-[2025-08-15 00:35:02]    Placez vos fichiers dans: /home/assane-dione/Bureau/Dataaireflow360/data
-[2025-08-15 00:35:02] 
-📊 RÉSUMÉ DES TRAITEMENTS
-[2025-08-15 00:35:02] ========================================
